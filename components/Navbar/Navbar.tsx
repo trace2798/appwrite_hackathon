@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const router = useRouter();
   return (
-    <nav className="w-full fixed z-40 p-5">
+    <nav className="w-full fixed z-40 pt-2">
       <div className="flex flex-row items-center md:justify-between transition duration-500 bg-neutral-200/75 backdrop-blur-sm  border-b border-slate-300 dark:border-slate-700 dark:bg-slate-900/75 shadow-sm pr-[2vw] lg:px-[4vw] 2xl:px-[10vw]">
         <div className="flex-row gap-7 hidden lg:flex ">
           <MenuItem onClick={() => router.push("/")} label="Task Master" />

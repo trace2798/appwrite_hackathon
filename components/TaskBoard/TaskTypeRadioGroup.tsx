@@ -7,19 +7,19 @@ const types = [
     id: "todo",
     name: "Todo",
     description: "A new task to be completed",
-    color: "bg-red-500",
+    color: "bg-red-400",
   },
   {
     id: "inprogress",
     name: "In Progress",
     description: "A task that is currently being worked on",
-    color: "bg-yellow-300",
+    color: "bg-yellow-200",
   },
   {
     id: "done",
     name: "Done",
     description: "A task that has been completed",
-    color: "bg-green-500",
+    color: "bg-green-600",
   },
 ];
 
@@ -64,7 +64,7 @@ const TaskTypeRadioGroup = () => {
                           <RadioGroup.Label
                             as="p"
                             className={`font-medium ${
-                              checked ? "text-white" : "text-gray-900"
+                              checked ? "text-slate-800" : "text-gray-900"
                             }`}
                           >
                             {type.name}
@@ -72,7 +72,7 @@ const TaskTypeRadioGroup = () => {
                           <RadioGroup.Description
                             as="span"
                             className={`inline ${
-                              checked ? "text-white" : "text-gray-500"
+                              checked ? "text-slate-700" : "text-gray-500"
                             }`}
                           >
                             <span>{type.description}</span>

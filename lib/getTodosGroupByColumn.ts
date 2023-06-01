@@ -5,7 +5,7 @@ export const getTodosGroupByColumn = async () => {
     process.env.NEXT_PUBLIC_DATABASE_ID!,
     process.env.NEXT_PUBLIC_TODOS_COLLECTION_ID!
   );
-  console.log(data);
+  // console.log(data);
   
   const todos = data.documents;
 
@@ -29,7 +29,7 @@ export const getTodosGroupByColumn = async () => {
     return acc;
   }, new Map<TypedColumn, Column>());
 
-  console.log(columns);
+  // console.log(columns);
 
   //if columns do not have a tag, add them with empty todos.
   const columnTypes: TypedColumn[] = ["todo", "inprogress", "done"];

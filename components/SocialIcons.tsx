@@ -8,7 +8,7 @@ const SocialIcons: FC<SocialIconsProps> = ({}) => {
       <div className="flex ">
         {" "}
         <a
-          href="https://github.com/iamvishnusankar/next-sitemap"
+          href="https://github.com/trace2798/appwrite_hackathon"
           target="_blank"
           className="px-3 pt-[6px] transition-all text-slate-950 hover:text-slate-900 dark:rotate-0 dark:scale-100 dark:text-slate-400 dark:hover:text-slate-100"
         >
