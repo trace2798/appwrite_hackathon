@@ -45,7 +45,9 @@ const Column = ({ id, todos, index }: Props) => {
                 {...provided.droppableProps}
                 ref={provided.innerRef}
                 className={`my-6 rounded-md border border-l-4 p-4 border-slate-900 dark:border-neutral-100 ${
-                  snapshot.isDraggingOver ? "bg-green-200" : "bg-neutral-300/50"
+                  snapshot.isDraggingOver
+                    ? "dark:bg-neutral-300/90 bg-slate-600/50"
+                    : "dark:bg-neutral-300/50 bg-slate-900/50"
                 }`}
               >
                 <h2 className="flex justify-between font-satoshiBold text-slate-900 dark:text-neutral-100 text-xl p-2">
@@ -94,7 +96,7 @@ const Column = ({ id, todos, index }: Props) => {
                   <div className="flex items-end justify-end p-2">
                     <button
                       onClick={handleAddTodo}
-                      className="text-slate-900 dark:text-neutral-100 hover:text-green-600"
+                      className="text-neutral-300 dark:text-neutral-100 hover:text-neutral-100"
                     >
                       <PlusCircleIcon className="h-6 w-6" />
                     </button>
