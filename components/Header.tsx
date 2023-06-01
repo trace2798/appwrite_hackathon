@@ -12,7 +12,7 @@ const Header = () => {
           {/* <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-br from-pink-400 to-blue-500 filter blur-3xl opacity-50 -z-50" /> */}
         </div>
         <div className="flex items-center justify-center px-5 md:py-5">
-          <p className="flex items-center text-xl font-semibold  w-fit  max-w-3xl text-[#005501]">
+          <p className="flex items-center text-3xl font-semibold  w-fit  max-w-3xl text-slate-900 dark:text-neutral-300">
             Goals to Achieve
           </p>
         </div>

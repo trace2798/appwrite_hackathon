@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -21,6 +22,16 @@ module.exports = {
             "background-position": "right center",
           },
         },
+      },
+      fontFamily: {
+        satoshiMedium: "Satoshi-Medium",
+        satoshiBold: "Satoshi-Bold",
+        satoshiBlack: "Satoshi-Black",
+        ranadeLight: "Ranade-Light",
+        ranadeLightItalic: "Ranade-LightItalic",
+        ranadeRegular: "Ranade-Regular",
+        ranadeItalic: "Ranade-Italic",
+        ranadeMedium: "Ranade-Medium",
       },
     },
   },
