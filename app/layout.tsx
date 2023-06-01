@@ -1,3 +1,4 @@
+import Providers from '@/components/Providers'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -14,8 +15,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <Providers>
       <body className={inter.className}>{children}</body>
+      </Providers>
     </html>
   )
 }
