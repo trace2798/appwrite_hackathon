@@ -21,7 +21,7 @@ const Hero: FC<HeroProps> = ({}) => {
             This is my submission for the appwrite X hashnode hackathon
           </h2>
           <h2 className="mx-[10vw] mt-5 text-base md:text-xl font-ranadeRegular text-gray-600 dark:text-gray-400">
-            Task Manager is your personal todo list.
+            Task Manager is your personal todo list manager which I regularly use to boost productivity.
           </h2>
           <div className="flex flex-col md:flex-row justify-evenly items-center mt-7 mx-[10vw] w-full">
             <Link href="/docs">
