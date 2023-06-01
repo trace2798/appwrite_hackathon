@@ -45,12 +45,12 @@ function TodoCard({
   return (
     <>
       <div
-        className="bg-white rounded-md space-y-2 drop-shadow-md"
+        className="bg-neutral-300 rounded-md space-y-2 drop-shadow-md border-l-4 border-black"
         {...draggableProps}
         {...dragHandleProps}
         ref={innerRef}
       >
-        <div className="flex justify-between items-center p-5">
+        <div className="flex justify-between items-center p-5 text-slate-900 font-ranadeRegular">
           <p>{todo.title}</p>
 
           <button

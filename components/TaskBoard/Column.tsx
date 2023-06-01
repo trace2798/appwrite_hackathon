@@ -44,13 +44,13 @@ const Column = ({ id, todos, index }: Props) => {
               <div
                 {...provided.droppableProps}
                 ref={provided.innerRef}
-                className={`pb-2 rounded-2xl shadow-sm ${
-                  snapshot.isDraggingOver ? "bg-green-200" : "bg-white/50"
+                className={`my-6 rounded-md border border-l-4 p-4 border-slate-900 dark:border-neutral-100 ${
+                  snapshot.isDraggingOver ? "bg-green-200" : "bg-neutral-300/50"
                 }`}
               >
-                <h2 className="flex justify-between font-bold text-xl p-2">
+                <h2 className="flex justify-between font-satoshiBold text-slate-900 dark:text-neutral-100 text-xl p-2">
                   {idToColumnText[id]}
-                  <span className="text-gray-500 bg-gray-200 rounded-full px-2 py-2 text-sm font-normal">
+                  <span className="text-neutral-200 bg-gray-900 dark:text-slate-800 dark:bg-neutral-200 border border-slate-900 rounded-md px-2 py-1 text-sm font-ranadeLight">
                     {!searchString
                       ? todos.length
                       : todos.filter((todo) =>
@@ -94,7 +94,7 @@ const Column = ({ id, todos, index }: Props) => {
                   <div className="flex items-end justify-end p-2">
                     <button
                       onClick={handleAddTodo}
-                      className="text-green-500 hover:text-green-600"
+                      className="text-slate-900 dark:text-neutral-100 hover:text-green-600"
                     >
                       <PlusCircleIcon className="h-6 w-6" />
                     </button>
