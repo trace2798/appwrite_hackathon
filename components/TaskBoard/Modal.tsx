@@ -55,8 +55,8 @@ function Modal() {
           <div className="fixed inset-0 bg-black bg-opacity-25" />
         </Transition.Child>
 
-        <div className="fixed inset-0 overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4 text-center">
+        <div className="fixed inset-0 overflow-y-auto ">
+          <div className="flex min-h-full items-center justify-center p-4 text-center ">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -66,10 +66,10 @@ function Modal() {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-slate-900 dark:bg-neutral-300 p-6 text-left align-middle shadow-xl transition-all">
                 <Dialog.Title
                   as="h3"
-                  className="text-lg font-medium leading-6 text-gray-900 pb-2"
+                  className="text-lg font-satoshiBold text-neutral-300 leading-6 dark:text-gray-900 pb-2"
                 >
                   Add a Task
                 </Dialog.Title>
@@ -80,7 +80,7 @@ function Modal() {
                     value={newTaskInput}
                     onChange={(e) => setNewTaskInput(e.target.value)}
                     placeholder="Enter a task here.."
-                    className="w-full border border-gray-300 rounded-md outline-none p-5"
+                    className="w-full border border-gray-300 bg-slate-700 dark:bg-neutral-200 text-white dark:text-black rounded-md outline-none p-5"
                   />
                 </div>
 
@@ -92,10 +92,10 @@ function Modal() {
                     onClick={() => {
                       imagePickerRef.current?.click();
                     }}
-                    className="w-full border border-gray-300 rounded-md outline-none p-5 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                    className="w-full border border-gray-300 dark:border-blue-900 rounded-md outline-none p-5 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                   >
-                    <PhotoIcon className="h-6 w-6 mr-2 inline-block" /> Upload
-                    Image
+                    <PhotoIcon className="h-6 w-6 mr-2 inline-block text-neutral-200 dark:text-slate-900" />
+                    <span className="text-neutral-200 dark:text-black">Upload Image</span>
                   </button>
                   {image && (
                     <Image
