@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Dialog } from "@headlessui/react";
-import Modal from "@/components/Modal";
+import Modal from "@/components/Modal/Modal";
 import { Button } from "@/components/Button";
 import { AlertTriangle } from "lucide-react";
 import { useBoardStore } from "@/store/BoardStore";
