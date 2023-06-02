@@ -3,8 +3,8 @@
 import * as React from 'react'
 import { useTheme } from 'next-themes'
 
-import { Icons } from '../components/Icons'
-import { Button } from './Button'
+import { Icons } from '../../components/Icons'
+import { Button } from '../Button'
 import {
   DropdownMenu,
   DropdownMenuContent,

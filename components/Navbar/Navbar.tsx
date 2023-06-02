@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 import { Menu } from "lucide-react";
 
-import { ThemeToggle } from "../ThemeToggle";
+import { ThemeToggle } from "../Theme/ThemeToggle";
 import Icons from "../Icons";
 import SocialIcons from "../SocialIcons";
 
