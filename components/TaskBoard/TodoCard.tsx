@@ -1,14 +1,15 @@
 "use client";
-
 import getUrl from "@/lib/getUrl";
 import { useBoardStore } from "@/store/BoardStore";
 import { XCircleIcon } from "@heroicons/react/24/solid";
+import { TrashIcon } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
   DraggableProvidedDragHandleProps,
   DraggableProvidedDraggableProps,
 } from "react-beautiful-dnd";
+import ConfirmTaskModal from "./ConfirmTaskModal";
 
 interface TodoCardProps {
   todo: Todo;
@@ -27,10 +28,8 @@ function TodoCard({
   draggableProps,
   dragHandleProps,
 }: TodoCardProps) {
-  const deleteTask = useBoardStore((state) => state.deleteTask);
-
   const [imageUrl, setImageUrl] = useState<string | undefined>(undefined);
-
+  const [confirmOpen, setConfirmOpen] = useState(false);
   useEffect(() => {
     if (todo.image) {
       const fetchImage = async () => {
@@ -44,6 +43,13 @@ function TodoCard({
   }, [todo]);
   return (
     <>
+      <ConfirmTaskModal
+        isOpen={confirmOpen}
+        onClose={() => setConfirmOpen(false)}
+        todo={todo}
+        index={index}
+        id={id}
+      />
       <div
         className="bg-neutral-300 rounded-md space-y-2 drop-shadow-md border-l-4 border-black"
         {...draggableProps}
@@ -52,13 +58,16 @@ function TodoCard({
       >
         <div className="flex justify-between items-center p-5 text-slate-900 font-ranadeRegular">
           <p>{todo.title}</p>
-
-          <button
-            onClick={() => deleteTask(index, todo, id)}
-            className="text-red-500 hover:text-red-600"
-          >
-            <XCircleIcon className="ml-5 h-8 w-8" />
-          </button>
+          <div className="flex justify-center gap-10 my-8">
+            <div
+              onClick={() => setConfirmOpen(true)}
+              className="flex flex-col gap-3 items-center cursor-pointer hover:opacity-75"
+            >
+              <div className="w-10 h-10 bg-neutral-100 rounded-full flex items-center justify-center">
+                <TrashIcon size={20} />
+              </div>
+            </div>
+          </div>
         </div>
         {imageUrl && (
           <div className=" h-full w-full rounded-b-md">
