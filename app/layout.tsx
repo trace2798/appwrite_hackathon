@@ -2,7 +2,7 @@ import Providers from "@/components/Theme/Providers";
 import "./globals.css";
 
 import Navbar from "@/components/Navbar/Navbar";
-import Modal from "@/components/TaskBoard/Modal";
+import Modal from "@/components/Modal/AddTaskModal";
 
 export const metadata = {
   title: "Task Manager",
