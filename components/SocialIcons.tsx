@@ -6,7 +6,6 @@ const SocialIcons: FC<SocialIconsProps> = ({}) => {
   return (
     <>
       <div className="flex ">
-        {" "}
         <a
           href="https://github.com/trace2798/appwrite_hackathon"
           target="_blank"

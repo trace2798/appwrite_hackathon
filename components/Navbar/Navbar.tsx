@@ -1,11 +1,8 @@
 "use client";
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import MobileMenu from "./MobileMenu";
 import MenuItem from "./NavbarItem";
 import { useRouter } from "next/navigation";
-
-import { Menu } from "lucide-react";
-
 import { ThemeToggle } from "../Theme/ThemeToggle";
 import Icons from "../Icons";
 import SocialIcons from "../SocialIcons";
@@ -43,7 +40,6 @@ const Navbar = () => {
         </div>
         <div className="flex flex-row ml-auto items-center">
           <div className="max-md:hidden">
-            {" "}
             <SocialIcons />
           </div>
           <ThemeToggle />

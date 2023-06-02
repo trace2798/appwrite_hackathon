@@ -1,8 +1,7 @@
 import Providers from "@/components/Theme/Providers";
 import "./globals.css";
-
 import Navbar from "@/components/Navbar/Navbar";
-import Modal from "@/components/Modal/AddTaskModal";
+import Modal from "@/components/TaskBoard/Modal";
 
 export const metadata = {
   title: "Task Manager",
@@ -19,8 +18,8 @@ export default function RootLayout({
       <body>
         <Providers>
           <Navbar />
-          <Modal/>
           {children}
+          <Modal />
         </Providers>
       </body>
     </html>

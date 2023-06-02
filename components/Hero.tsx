@@ -24,7 +24,7 @@ const Hero: FC<HeroProps> = ({}) => {
             Task Manager is am personal chore manager which helps to boost productivity.
           </h2>
           <div className="flex flex-col md:flex-row justify-evenly items-center mt-7 mx-[10vw] w-full">
-            <Link href="/docs">
+            <Link href="/application">
               <Button className="max-md:mb-5">
                 Try Task Master
                 <Icons.ArrowRight className="h-4" />

@@ -18,9 +18,7 @@ const buttonVariants = cva(
         ghost:
           "bg-transparent hover:bg-neutral-300 dark:hover:bg-slate-800 dark:text-slate-400 data-[state=open]:bg-transparent dark:data-[state=open]:bg-transparent",
         link: "bg-transparent dark:bg-transparent underline-offset-4 hover:underline text-slate-900 dark:text-slate-100 hover:bg-transparent dark:hover:bg-transparent",
-        danger:
-          "bg-rose-500 hover:bg-rose-600 focus-visible:outline-rose-600",
-
+        danger: "bg-rose-500 hover:bg-rose-600 focus-visible:outline-rose-600",
       },
       size: {
         default: "h-10 py-2 px-4",
@@ -44,16 +42,18 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, children, variant, isLoading, size, ...props }, ref) => {
     return (
-      <button
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        disabled={isLoading}
-        {...props}
-      >
-        {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+      <>
+        <button
+          className={cn(buttonVariants({ variant, size, className }))}
+          ref={ref}
+          disabled={isLoading}
+          {...props}
+        >
+          {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
 
-        {children}
-      </button>
+          {children}
+        </button>
+      </>
     );
   }
 );
