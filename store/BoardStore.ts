@@ -1,5 +1,5 @@
 import { ID, databases, storage } from "@/lib/appwrite/appwrite";
-import { getTodosGroupByColumn } from "@/lib/getTodosGroupByColumn";
+import { getTaskByColumn } from "@/lib/getTaskByColumn";
 import uploadImage from "@/lib/uploadImage";
 import { create } from "zustand";
 
@@ -57,7 +57,7 @@ export const useBoardStore = create<BoardState>((set, get) => ({
 
   // Define an async function that fetches the board data from the server and updates the board state
   getBoard: async () => {
-    const board = await getTodosGroupByColumn();
+    const board = await getTaskByColumn();
     set({ board });
   },
   // Define a function that updates the board state with a given board object

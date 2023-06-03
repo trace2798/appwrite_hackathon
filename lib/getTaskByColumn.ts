@@ -1,7 +1,7 @@
 import { databases } from "@/lib/appwrite/appwrite";
 
-// An asynchronous function named getTodosGroupByColumn
-export const getTodosGroupByColumn = async () => {
+// An asynchronous function named getTaskByColumn
+export const getTaskByColumn = async () => {
   // Using the listDocuments method of the databases object to retrieve data
   const data = await databases.listDocuments(
     process.env.NEXT_PUBLIC_DATABASE_ID!,
@@ -72,7 +72,7 @@ export const getTodosGroupByColumn = async () => {
   return board;
 };
 
-// This code exports an asynchronous function named getTodosGroupByColumn that retrieves data from a database using the listDocuments method of the databases object imported from “@/lib/appwrite/appwrite”.
+// This code exports an asynchronous function named getTaskByColumn that retrieves data from a database using the listDocuments method of the databases object imported from “@/lib/appwrite/appwrite”.
 // The data is then processed to group the todos by their status and create a Map object with keys as todo status and values as objects with id and todos properties.
 // The code also checks if all column types (“todo”, “inprogress”, “done”) are present in the columns Map object and adds any missing column types with empty todos.
 // Finally, the columns Map object is sorted based on the order of column types in the columnTypes array and a board object is created with a columns property set to the sorted columns Map object. The board object is then returned by the function.

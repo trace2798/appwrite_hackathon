@@ -77,7 +77,7 @@ function TodoCard({
         ref={innerRef}
       >
         {/* Render a div element that contains the todo title and a delete button */}
-        <div className="flex justify-between items-center p-5 text-slate-900 font-ranadeRegular">
+        <div className="flex md:max-xl:flex-col justify-between items-center p-5 text-slate-900 font-ranadeRegular">
           <p>{todo.title}</p>
           <div className="flex justify-center gap-5 my-5">
             {/* Edit Modal */}
