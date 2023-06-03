@@ -17,10 +17,6 @@ interface BoardState {
   newTaskInput: string;
   // A property that holds the selected column id for a new task
   newTaskType: TypedColumn;
-  // A property that holds the search string for filtering tasks
-  searchString: string;
-  // A function that updates the search string state
-  setSearchString: (searchString: string) => void;
   // A function that deletes a task from the database and the board
   deleteTask: (taskIndex: number, todoId: Todo, id: TypedColumn) => void;
   // A function that updates the input value for a new task
@@ -33,7 +29,7 @@ interface BoardState {
   setImage: (image: File | null) => void;
   // A function that adds a new task to the database and the board
   addTask: (todo: string, columnId: TypedColumn, image?: File | null) => void;
-
+  // A function that edits a current task and updated it to the database and the board
   editTask: (
     taskIndex: number,
     todoId: Todo,
@@ -51,16 +47,14 @@ export const useBoardStore = create<BoardState>((set, get) => ({
   board: {
     columns: new Map<TypedColumn, Column>(),
   },
-  // Initialize the search string state with an empty string
-  searchString: "",
+
   // Initialize the new task input state with an empty string
   newTaskInput: "",
   // Initialize the new task type state with "todo" as the default column id
   newTaskType: "todo",
   // Initialize the image state with null as the default value
   image: null,
-  // Define a function that updates the search string state with a given value
-  setSearchString: (searchString) => set({ searchString }),
+
   // Define an async function that fetches the board data from the server and updates the board state
   getBoard: async () => {
     const board = await getTodosGroupByColumn();
