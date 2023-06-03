@@ -79,14 +79,14 @@ function TodoCard({
         {/* Render a div element that contains the todo title and a delete button */}
         <div className="flex justify-between items-center p-5 text-slate-900 font-ranadeRegular">
           <p>{todo.title}</p>
-          <div className="flex justify-center gap-10 my-8">
+          <div className="flex justify-center gap-5 my-5">
             {/* Edit Modal */}
             <div
               // Set an onClick handler that opens the confirmation modal
               onClick={() => setConfirmEditOpen(true)}
               className="flex flex-col gap-3 items-center cursor-pointer hover:opacity-75"
             >
-              <div className="w-8 h-8 bg-neutral-100 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-neutral-100 hover:bg-blue-300 rounded-full flex items-center justify-center">
                 {/* Render a trash icon component with the given size */}
                 <PencilIcon size={16} />
               </div>
@@ -97,7 +97,7 @@ function TodoCard({
               onClick={() => setConfirmOpen(true)}
               className="flex flex-col gap-3 items-center cursor-pointer hover:opacity-75"
             >
-              <div className="w-8 h-8 bg-neutral-100 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-neutral-100 hover:bg-red-600 rounded-full flex items-center justify-center">
                 {/* Render a trash icon component with the given size */}
                 <TrashIcon size={16} />
               </div>
