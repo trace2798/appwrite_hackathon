@@ -1,6 +1,6 @@
 "use client";
 import getUrl from "@/lib/getUrl";
-import { TrashIcon } from "lucide-react";
+import { PencilIcon, TrashIcon } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
@@ -8,6 +8,8 @@ import {
   DraggableProvidedDraggableProps,
 } from "react-beautiful-dnd";
 import ConfirmTaskModal from "../Modal/ConfirmTaskModal";
+import EditTaskModal from "../Modal/EditTaskModal";
+import { useModalStore } from "@/store/ModalStore";
 
 interface TodoCardProps {
   todo: Todo;
@@ -32,6 +34,7 @@ function TodoCard({
   const [imageUrl, setImageUrl] = useState<string | undefined>(undefined);
   // Define a state variable for the confirmation modal open status
   const [confirmOpen, setConfirmOpen] = useState(false);
+  const [confirmEditOpen, setConfirmEditOpen] = useState(false);
   // Define an effect hook that runs once when the component mounts
   useEffect(() => {
     // If the todo has an image, fetch its URL from the server
@@ -46,6 +49,7 @@ function TodoCard({
       fetchImage();
     }
   }, [todo]);
+
   return (
     <>
       {/* Render a confirmation modal component with the given props */}
@@ -56,7 +60,14 @@ function TodoCard({
         index={index}
         id={id}
       />
-     {/* Render a div element that contains the todo card content and styles */}
+      <EditTaskModal
+        isOpen={confirmEditOpen}
+        onClose={() => setConfirmEditOpen(false)}
+        todo={todo}
+        index={index}
+        id={id}
+      />
+      {/* Render a div element that contains the todo card content and styles */}
       <div
         className="bg-neutral-300 rounded-md space-y-2 drop-shadow-md border-l-4 border-black"
         // Spread the draggable props to enable drag and drop functionality
@@ -69,14 +80,26 @@ function TodoCard({
         <div className="flex justify-between items-center p-5 text-slate-900 font-ranadeRegular">
           <p>{todo.title}</p>
           <div className="flex justify-center gap-10 my-8">
+            {/* Edit Modal */}
+            <div
+              // Set an onClick handler that opens the confirmation modal
+              onClick={() => setConfirmEditOpen(true)}
+              className="flex flex-col gap-3 items-center cursor-pointer hover:opacity-75"
+            >
+              <div className="w-8 h-8 bg-neutral-100 rounded-full flex items-center justify-center">
+                {/* Render a trash icon component with the given size */}
+                <PencilIcon size={16} />
+              </div>
+            </div>
+            {/* Delete Modal */}
             <div
               // Set an onClick handler that opens the confirmation modal
               onClick={() => setConfirmOpen(true)}
               className="flex flex-col gap-3 items-center cursor-pointer hover:opacity-75"
             >
-              <div className="w-10 h-10 bg-neutral-100 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-neutral-100 rounded-full flex items-center justify-center">
                 {/* Render a trash icon component with the given size */}
-                <TrashIcon size={20} />
+                <TrashIcon size={16} />
               </div>
             </div>
           </div>

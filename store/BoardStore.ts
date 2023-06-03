@@ -21,10 +21,8 @@ interface BoardState {
   searchString: string;
   // A function that updates the search string state
   setSearchString: (searchString: string) => void;
-
   // A function that deletes a task from the database and the board
   deleteTask: (taskIndex: number, todoId: Todo, id: TypedColumn) => void;
-
   // A function that updates the input value for a new task
   setNewTaskInput: (input: string) => void;
   // A function that updates the selected column id for a new task
@@ -35,6 +33,15 @@ interface BoardState {
   setImage: (image: File | null) => void;
   // A function that adds a new task to the database and the board
   addTask: (todo: string, columnId: TypedColumn, image?: File | null) => void;
+
+  editTask: (
+    taskIndex: number,
+    todoId: Todo,
+    id: TypedColumn,
+    newTitle?: string,
+    newStatus?: TypedColumn,
+    newImage?: File | null
+  ) => void;
 }
 
 // Export a custom hook that returns an object of type BoardState
@@ -61,23 +68,18 @@ export const useBoardStore = create<BoardState>((set, get) => ({
   },
   // Define a function that updates the board state with a given board object
   setBoardState: (board) => set({ board }),
-
   // Define an async function that deletes a task from the server and the board state
   deleteTask: async (taskIndex: number, todo: Todo, id: TypedColumn) => {
     // Create a new map of columns by copying the current board state
     const newColumns = new Map(get().board.columns);
-
     // Remove the task from the corresponding column in the new map
     newColumns.get(id)?.todos.splice(taskIndex, 1);
-
     // Update the board state with the new map of columns
     set({ board: { columns: newColumns } });
-
     // If the task has an image, delete it from the storage server
     if (todo.image) {
       await storage.deleteFile(todo.image.bucketId, todo.image.fileId);
     }
-
     // Delete the task document from the database server
     await databases.deleteDocument(
       process.env.NEXT_PUBLIC_DATABASE_ID!,
@@ -103,6 +105,61 @@ export const useBoardStore = create<BoardState>((set, get) => ({
         status: columnId,
       }
     );
+  },
+  // Defines an editTask function. The function then updates a document in a database using the updateDocument method of the databases object.
+  editTask: async (taskIndex, todoId, id, newTitle, newStatus, newImage) => {
+    // Declare a variable to hold the file information
+    let file: Image | undefined;
+
+    // Check if a new image is provided
+    if (newImage) {
+      // Upload the new image and store the result in fileUploaded
+      const fileUploaded = await uploadImage(newImage);
+      // Check if the file was uploaded successfully
+      if (fileUploaded) {
+        // Store the bucketId and fileId of the uploaded file in the file variable
+        file = {
+          bucketId: fileUploaded.bucketId,
+          fileId: fileUploaded.$id,
+        };
+      }
+    }
+
+    // Update a document in the database with the new title, status, and image (if provided)
+    await databases.updateDocument(
+      process.env.NEXT_PUBLIC_DATABASE_ID!,
+      process.env.NEXT_PUBLIC_TODOS_COLLECTION_ID!,
+      todoId.$id,
+      {
+        title: newTitle || todoId.title,
+        status: newStatus || todoId.status,
+        ...(file && { image: JSON.stringify(file) }),
+      }
+    );
+
+    // Update the state of the board
+    set((state) => {
+      // Create a new map of columns
+      const newColumns = new Map(state.board.columns);
+      // Find the column with the given id
+      const column = newColumns.get(id);
+      // Check if the column exists
+      if (!column) return {};
+      // Find the todo at the given task index
+      const todo = column.todos[taskIndex];
+      // Update the todo with the new title, status, and image (if provided)
+      todo.title = newTitle || todo.title;
+      todo.status = newStatus || todo.status;
+      if (file) {
+        todo.image = file;
+      }
+      // Return the updated state
+      return {
+        board: {
+          columns: newColumns,
+        },
+      };
+    });
   },
 
   // Define an async function that adds a new task to the server and the board state
