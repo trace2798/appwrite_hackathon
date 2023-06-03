@@ -50,6 +50,9 @@ const Column = ({ id, todos, index }: Props) => {
                 >
                   <h2 className="flex justify-between font-satoshiBold text-slate-900 dark:text-neutral-100 text-xl p-2">
                     {idToColumnText[id]}
+                    <span className="text-neutral-200 bg-gray-900 dark:text-slate-800 dark:bg-neutral-200 border border-slate-900 rounded-md px-2 py-1 text-sm font-ranadeRegular">
+                      {todos.length}
+                    </span>
                   </h2>
                   <div className="space-y-2">
                     {todos.map((todo, index) => {
