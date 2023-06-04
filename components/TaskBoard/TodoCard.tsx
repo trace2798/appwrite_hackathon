@@ -110,7 +110,7 @@ function TodoCard({
           <div className=" h-full w-full rounded-b-md">
             <Image
               src={imageUrl}
-              alt={imageUrl}
+              alt="Task_image"
               width={400}
               height={200}
               className="w-full object-contain rounded-b-md"
