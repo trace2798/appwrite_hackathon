@@ -130,7 +130,6 @@ export const useBoardStore = create<BoardState>((set, get) => ({
         ...(file && { image: JSON.stringify(file) }),
       }
     );
-
     // Update the state of the board
     set((state) => {
       // Create a new map of columns
