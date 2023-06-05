@@ -9,7 +9,6 @@ import {
 } from "react-beautiful-dnd";
 import ConfirmTaskModal from "../Modal/ConfirmTaskModal";
 import EditTaskModal from "../Modal/EditTaskModal";
-import { useModalStore } from "@/store/ModalStore";
 
 interface TodoCardProps {
   todo: Todo;
@@ -69,7 +68,7 @@ function TodoCard({
       />
       {/* Render a div element that contains the todo card content and styles */}
       <div
-        className="bg-neutral-300 rounded-md space-y-2 drop-shadow-md border-l-4 border-black even:bg-emerald-300 dark:even:bg-[#8BD3E6]/80"
+        className="bg-neutral-300 rounded-md space-y-2 drop-shadow-md border-l-4 border-slate-700 even:border-neutral-200 dark:border-red-900/50 dark:even:border-neutral-200 even:bg-emerald-300 dark:even:bg-[#8BD3E6]/80"
         // Spread the draggable props to enable drag and drop functionality
         {...draggableProps}
         {...dragHandleProps}
