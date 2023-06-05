@@ -49,4 +49,4 @@ Running commands with npm `npm run [command]`
 | `build`         | To build your application                |
 | `dev`           | Starts a production  instance of the app |
 
-## For env value and functionality of this application I have wrote a very detailed article on hashnode
+## For env value and functionality of this application I have wrote a very detailed article on [hashnode](https://shreyas-chaliha.hashnode.dev/how-to-create-a-typescript-react-function-component-snippet-in-vs-code)
