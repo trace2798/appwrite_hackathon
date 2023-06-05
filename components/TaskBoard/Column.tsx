@@ -45,10 +45,10 @@ const Column = ({ id, todos, index }: Props) => {
                   className={`my-6 rounded-md border border-l-4 p-4 border-slate-900 dark:border-neutral-100 ${
                     snapshot.isDraggingOver
                       ? "dark:bg-neutral-300/90 bg-slate-600/50"
-                      : "dark:bg-neutral-300/50 bg-slate-900/50"
+                      : "dark:bg-[#8BD3E6]/20 bg-emerald-600/50"
                   }`}
                 >
-                  <h2 className="flex justify-between font-satoshiBold text-slate-900 dark:text-neutral-100 text-xl p-2">
+                  <h2 className="flex justify-between font-satoshiBold text-teal-950 dark:text-neutral-100 text-xl p-2">
                     {idToColumnText[id]}
                     <span className="text-neutral-200 bg-gray-900 dark:text-slate-800 dark:bg-neutral-200 border border-slate-900 rounded-md px-2 py-1 text-sm font-ranadeRegular">
                       {todos.length}

@@ -69,7 +69,7 @@ function TodoCard({
       />
       {/* Render a div element that contains the todo card content and styles */}
       <div
-        className="bg-neutral-300 rounded-md space-y-2 drop-shadow-md border-l-4 border-black"
+        className="bg-neutral-300 rounded-md space-y-2 drop-shadow-md border-l-4 border-black even:bg-emerald-300 dark:even:bg-[#8BD3E6]/80"
         // Spread the draggable props to enable drag and drop functionality
         {...draggableProps}
         {...dragHandleProps}

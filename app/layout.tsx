@@ -14,7 +14,7 @@ export const metadata = {
     "hashnode",
     "appwrite hackathon",
     "appwrite hashnode hackathon",
-    "hashnode hackathon"
+    "hashnode hackathon",
   ],
   openGraph: {
     type: "website",
@@ -29,7 +29,7 @@ export const metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [`${siteConfig.url}/og.jpg`],
-    creator: "@Trace",
+    creator: "@Tisonthemove247",
   },
   icons: {
     icon: "/favicon.ico",

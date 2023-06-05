@@ -23,7 +23,7 @@ interface Board {
   }
   
   
-export type SiteConfig = {
+interface SiteConfig  {
   name: string
   description: string
   url: string

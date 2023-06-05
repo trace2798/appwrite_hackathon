@@ -1,4 +1,3 @@
-import { SiteConfig } from "@/typings";
 
 export const siteConfig: SiteConfig = {
   name: "Task Manager",

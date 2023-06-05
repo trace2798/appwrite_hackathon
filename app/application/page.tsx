@@ -4,7 +4,8 @@ import { FC } from "react";
 
 export const metadata = {
   title: "Task Manager - Application",
-  description: "Made with Next.Js 13.4, appwrite and tailwindcss.",
+  description:
+    "Board page for Task Manager - Made with Next.Js 13.4 and appwrite.",
   keywords: [
     "Next.js",
     "Appwrite",
@@ -12,7 +13,7 @@ export const metadata = {
     "hashnode",
     "appwrite hackathon",
     "appwrite hashnode hackathon",
-    "hashnode hackathon"
+    "hashnode hackathon",
   ],
   openGraph: {
     type: "website",
@@ -21,14 +22,13 @@ export const metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
-    opImage: [`${siteConfig.url}/og2.jpg`],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
     images: [`${siteConfig.url}/og2.jpg`],
-    creator: "@Trace",
+    creator: "@Tisonthemove247",
   },
   icons: {
     icon: "/favicon.ico",
@@ -37,7 +37,6 @@ export const metadata = {
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
 };
-
 
 interface pageProps {}
 
