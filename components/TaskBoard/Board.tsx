@@ -35,7 +35,7 @@ export default function Board() {
       });
     }
 
-    //This state is needed as the indexes are slored at numbers 0,1,2 etc instead of id's with DND library.
+    //This state is needed as the indexes are started at numbers 0,1,2 etc instead of id's with DND library.
     const columns = Array.from(board.columns);
     const startColIndex = columns[Number(source.droppableId)];
     const finishColIndex = columns[Number(destination.droppableId)];
