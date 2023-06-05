@@ -43,5 +43,9 @@ Running commands with npm `npm run [command]`
 | command         | description                              |
 | :-------------- | :--------------------------------------- |
 | `dev`           | Starts a development instance of the app |
+| :-------------- | :--------------------------------------- |
+| `build`         | Starts a development instance of the app |
+| :-------------- | :--------------------------------------- |
+| `dev`           | Starts a development instance of the app |
 
 ## For env value and functionality of this application I have wrote a very detailed article on hashnode
