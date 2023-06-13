@@ -30,7 +30,7 @@ const Hero: FC<HeroProps> = ({}) => {
                 <Icons.ArrowRight className="h-4" />
               </Button>
             </Link>
-            <a href="https://hashnode.com/draft/6478d08a604839000f21f432" target="_blank">
+            <a href="https://shreyas-chaliha.hashnode.dev/boost-your-productivity-with-task-manager" target="_blank">
               <Button className="max-md:mb-5">
                 Hashnode Article <Icons.ArrowRight className="h-4" />
               </Button>

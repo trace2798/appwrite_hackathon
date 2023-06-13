@@ -28,7 +28,7 @@ const SocialIcons: FC<SocialIconsProps> = ({}) => {
           </svg>
         </a>
         <a
-          href="https://www.npmjs.com/package/next-sitemap"
+          href="https://shreyas-chaliha.hashnode.dev/boost-your-productivity-with-task-manager"
           target="_blank"
           className="px-3 pt-[4px] transition-all text-slate-950 hover:text-slate-900 dark:rotate-0 dark:scale-100 dark:text-slate-400 dark:hover:text-slate-100"
         >
